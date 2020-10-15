@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:LeNombreMagique.Views"
+             x:Class="LeNombreMagique.Views.GamePage">
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <views:StarView Grid.Row="0" Grid.Column="0"/>
+            <StackLayout  Spacing="0" Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
+                <Label FontFamily="Bold" FontSize="35" Text="Devinez le nombre magique" TextColor="{StaticResource titleColor}" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Label x:Name="labelNumber"  Text="Entre x et x" FontFamily="Bold" FontSize="12"  HorizontalTextAlignment="Center" TextColor="{StaticResource titleColor}"/>
+                <Entry Margin="0,20,0,5 " HorizontalOptions="Center" WidthRequest="110" PlaceholderColor="White" BackgroundColor="{StaticResource shadowColor}" Focused="numberEntry_Focused" x:Name="numberEntry" Placeholder="?" FontSize="70" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
+                <Button Text="Deviner" HorizontalOptions="Center" BackgroundColor="{StaticResource shadowColor}" TextColor="White" Clicked="GuessButton_Clicked"/>
+            </StackLayout>
+            <BoxView Margin="-10,0,-10,-30" HeightRequest="100" Rotation="-10"  BackgroundColor="{StaticResource shadowColor}" Grid.Row="2" Grid.Column="0"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
